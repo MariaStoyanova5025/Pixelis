@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pixel</title>
+
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        li {
+            float: left;
+        }
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover {
+            background-color: #111;
+        }
+        form {
+            margin: 0 auto;
+            width: 200px;
+        }
+        input {
+            display: block;
+        }
+        body {
+            text-align: center;
+            background-image: url("background.png");
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href="pixel.html">home</a></li>
+        <li><a href="login.html">login</a></li>
+        <li><a href="register.html">register</a></li>
+        <li><a href="canvas.html">create new canvas</a></li>
+     </ul>
+    <form>
+         <input id = "email">
+        <input id = "username">
+        <input id = "password">
+        <Button type = "button" onclick = "getInfoReg()"> click me </Button>
+    </form>
+    
+
+    <script src = "js.js"></script>
+    
+</body>
+
+</html>
