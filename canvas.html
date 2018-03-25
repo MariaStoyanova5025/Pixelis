@@ -29,26 +29,25 @@
         body {
             background-image: url("background.png");
         }
-		.icon-bar {
-			width: 90px;
-			background-color: #555;
+		
+		.button-group button {
+			background-color: #555; 
+			border: 1px solid black; 
+			color: white; /* White text */
+			padding: 20px 20px; /* Some padding */
+			cursor: pointer; /* Pointer/hand icon */
+			width: 8%; /* Set a width if needed */
+			display: block; /* Make the buttons appear below each other */
 		}
 
-		.icon-bar a {
-			display: block;
-			text-align: center;
-			padding: 20px;
-			transition: all 0.3s ease;
-			color: white;
-			font-size: 50px;
+
+		.button-group button:not(:last-child) {
+			border-bottom: none; /* Prevent double borders */
 		}
 
-		.icon-bar a:hover {
-			background-color: #000;
-		}
-
-		.active {
-			background-color: #4CAF50 !important;
+		/* Add a background color on hover */
+		.button-group button:hover {
+			background-color: #111;
 		}
 		
 		.button {
@@ -83,14 +82,14 @@
         <li><a href="register.html">Register</a></li>
         <li><a href="canvas.html">Create new canvas</a></li>   
     </ul>
-		<div class="icon-bar">
-		  <a href="#"><i class="fa fa-paint-brush" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></a>
-		  <a href="#"><i class="fa fa-eyedropper" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></a> 
-		  <a href="#"><i class="fa fa-eraser" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></a> 
-		  <a href="#"><i class="fa fa-image" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></a>
-		  <a href="#"><i class="fa fa-edit" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></a>
-		  <a href="#"><i class="fa fa-download" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></a>
-		  <a href="#"><i class="fa fa-trash" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></a> 
+		<div class="button-group" class="icon-bar">
+		  <button><i class="fa fa-paint-brush" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button>
+		  <button><i class="fa fa-eyedropper" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button>
+		  <button><i class="fa fa-eraser" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button> 
+		  <button><i class="fa fa-image" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button>
+		  <button><i class="fa fa-edit" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button>
+		  <button><i class="fa fa-download" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button>
+		  <button><i class="fa fa-trash" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button> 
 		</div>		
 
     <Button class="button button1" type = "button" onclick = "createCanvas()"> new </Button>
