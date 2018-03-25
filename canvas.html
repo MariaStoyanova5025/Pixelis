@@ -50,6 +50,28 @@
 		.active {
 			background-color: #4CAF50 !important;
 		}
+		
+		.button {
+			border-radius: 2px;
+			border: none;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+
+		.button1 {background-color: black;}
+		.button2 {background-color: red;}
+		.button3 {background-color: orange;}
+		.button4 {background-color: yellow;}
+		.button5 {background-color: green;}
+		.button6 {background-color: blue;}
+		.button7 {background-color: purple;}
+		.button8 {background-color: white;}
         
     </style>
 </head>
@@ -69,17 +91,20 @@
 		  <a href="#"><i class="fa fa-edit" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></a>
 		  <a href="#"><i class="fa fa-download" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></a>
 		  <a href="#"><i class="fa fa-trash" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></a> 
-		</div>
-    <Button type = "button" onclick = "createCanvas()"> new </Button>
-    <Button type = "button" onclick = "red()"> red </Button>
-    <Button type = "button" onclick = "orange()"> orange </Button>
-    <Button type = "button" onclick = "yellow()"> yellow </Button>
-    <Button type = "button" onclick = "green()"> green </Button>
-    <Button type = "button" onclick = "blue()"> blue </Button>
-    <Button type = "button" onclick = "purple()"> purple </Button>
-    <Button type = "button" onclick = "rubber()"> rubber </Button>
+		</div>		
+
+    <Button class="button button1" type = "button" onclick = "createCanvas()"> new </Button>
+    <Button class="button button2" type = "button" onclick = "red()"> </Button>
+    <Button class="button button3" type = "button" onclick = "orange()"> </Button>
+    <Button class="button button4" type = "button" onclick = "yellow()"> </Button>
+    <Button class="button button5" type = "button" onclick = "green()"> </Button>
+    <Button class="button button6" type = "button" onclick = "blue()"> </Button>
+    <Button class="button button7" type = "button" onclick = "purple()"> </Button>
+    <Button class="button button8" type = "button" onclick = "rubber()"> </Button>
     <svg width="1000" height="500"></svg>
     <script src = "canvas.js"></script>
+	<!--<script src="jscolor.js"></script>
+	Color: <input class="jscolor" value="ab2567">-->
 </body>
 </body>
 
