@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Pixel</title>
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         ul {
             list-style-type: none;
@@ -29,6 +29,27 @@
         body {
             background-image: url("background.png");
         }
+		.icon-bar {
+			width: 90px;
+			background-color: #555;
+		}
+
+		.icon-bar a {
+			display: block;
+			text-align: center;
+			padding: 20px;
+			transition: all 0.3s ease;
+			color: white;
+			font-size: 50px;
+		}
+
+		.icon-bar a:hover {
+			background-color: #000;
+		}
+
+		.active {
+			background-color: #4CAF50 !important;
+		}
         
     </style>
 </head>
@@ -38,8 +59,17 @@
         <li><a href="pixel.html">Home</a></li>
         <li><a href="login.html">Login</a></li>
         <li><a href="register.html">Register</a></li>
-        <li><a href="canvas.html">Create new canvas</a></li>
+        <li><a href="canvas.html">Create new canvas</a></li>   
     </ul>
+		<div class="icon-bar">
+		  <a href="#"><i class="fa fa-paint-brush" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></a>
+		  <a href="#"><i class="fa fa-eyedropper" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></a> 
+		  <a href="#"><i class="fa fa-eraser" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></a> 
+		  <a href="#"><i class="fa fa-image" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></a>
+		  <a href="#"><i class="fa fa-edit" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></a>
+		  <a href="#"><i class="fa fa-download" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></a>
+		  <a href="#"><i class="fa fa-trash" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></a> 
+		</div>
     <Button type = "button" onclick = "createCanvas()"> new </Button>
     <Button type = "button" onclick = "red()"> red </Button>
     <Button type = "button" onclick = "orange()"> orange </Button>
