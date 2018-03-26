@@ -31,38 +31,38 @@
         }
 		
 		.button-group button {
+            overflow: auto;
 			background-color: #555; 
 			border: 1px solid black; 
 			color: white; /* White text */
 			padding: 20px 20px; /* Some padding */
 			cursor: pointer; /* Pointer/hand icon */
-			width: 8%; /* Set a width if needed */
+			width: 90px;
 			display: block; /* Make the buttons appear below each other */
 		}
-
-
 		.button-group button:not(:last-child) {
 			border-bottom: none; /* Prevent double borders */
 		}
-
 		/* Add a background color on hover */
 		.button-group button:hover {
 			background-color: #111;
 		}
-		
 		.button {
+            overflow: auto;
+            display: block;
 			border-radius: 2px;
 			border: none;
 			color: white;
 			padding: 20px;
 			text-align: center;
 			text-decoration: none;
-			display: inline-block;
 			font-size: 16px;
 			margin: 4px 2px;
 			cursor: pointer;
+            width: 90px;
+            height: 90px;
 		}
-
+        
 		.button1 {background-color: black;}
 		.button2 {background-color: red;}
 		.button3 {background-color: orange;}
@@ -82,7 +82,7 @@
         <li><a href="register.html">Register</a></li>
         <li><a href="canvas.html">Create new canvas</a></li>   
     </ul>
-		<div class="button-group" class="icon-bar">
+		<div class="button-group">
 		  <button><i class="fa fa-paint-brush" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button>
 		  <button><i class="fa fa-eyedropper" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button>
 		  <button><i class="fa fa-eraser" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button> 
@@ -92,14 +92,16 @@
 		  <button><i class="fa fa-trash" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button> 
 		</div>		
 
-    <Button class="button button1" type = "button" onclick = "createCanvas()"> new </Button>
-    <Button class="button button2" type = "button" onclick = "red()"> </Button>
-    <Button class="button button3" type = "button" onclick = "orange()"> </Button>
-    <Button class="button button4" type = "button" onclick = "yellow()"> </Button>
-    <Button class="button button5" type = "button" onclick = "green()"> </Button>
-    <Button class="button button6" type = "button" onclick = "blue()"> </Button>
-    <Button class="button button7" type = "button" onclick = "purple()"> </Button>
-    <Button class="button button8" type = "button" onclick = "rubber()"> </Button>
+        <div class="color-bar">
+            <Button class="button button1" type = "button" onclick = "createCanvas()"> new </Button>
+            <Button class="button button2" type = "button" onclick = "red()"> </Button>
+            <Button class="button button3" type = "button" onclick = "orange()"> </Button>
+            <Button class="button button4" type = "button" onclick = "yellow()"> </Button>
+            <Button class="button button5" type = "button" onclick = "green()"> </Button>
+            <Button class="button button6" type = "button" onclick = "blue()"> </Button>
+            <Button class="button button7" type = "button" onclick = "purple()"> </Button>
+            <Button class="button button8" type = "button" onclick = "rubber()"> </Button>
+            </div>
     <svg width="1000" height="500"></svg>
     <script src = "canvas.js"></script>
 	<!--<script src="jscolor.js"></script>

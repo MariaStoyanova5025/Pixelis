@@ -6,7 +6,9 @@ function getInfoLog()
 {
     var username = document.getElementById("username").value
     var password = document.getElementById("password").value
-    
+    let li = document.createElement('li');
+    li.innerHTML = username
+    document.getElementsByTagName('ul')[0].appendChild(li)
 }
 
 function getInfoReg()

@@ -1,6 +1,9 @@
 var curr_col;
 function createCanvas() {
-    console.log("bla");
+    let oldsvg = document.getElementsByTagName("svg")[0];
+    if(oldsvg){
+        oldsvg.innerHTML = '';
+    }
     var svg = document.getElementsByTagName("svg")[0];
     x = 0;
     y = 0;

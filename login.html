@@ -27,16 +27,44 @@
             background-color: #111;
         }
         form {
-            margin: 0 auto;
+            position: fixed;
+            top:15%;
+            left: 40%;
             width:180px;
+            background-color: #333;
 
-        }
-        input {
-            display: block;
         }
         body {
             text-align: center;
             background-image: url("background.png");
+        }
+        form {
+            width: 17%;
+            height: 30%;
+        }
+        b {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:15px;
+            color: white;
+            display: block;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        input {
+            display: block;
+            margin: 0 auto;
+            padding: 7px 8px;
+        }
+        label {
+            margin: 0 auto;
+        }
+        #psw {
+            margin: 0 auto;
+        }
+        button {
+            margin-top: 5%;
+            
+            
         }
     </style>
 </head>
@@ -51,14 +79,10 @@
      </ul>
     <form>
         <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username">  
+        <input id="username" type="text" placeholder="Enter Username">  
         <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password">
+        <input id="password" type="password" placeholder="Enter Password">
         <Button type = "button" onclick = "getInfoLog()"> Login </Button>
-        <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label>
-          <span class="psw">Forgot <a href="#">password?</a></span>
     </form>
     
     
