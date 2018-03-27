@@ -42,7 +42,7 @@ div {
     margin: 0.5%;
 }
 .image{
-    width: 300 px;
+    width: 100 px;
     height: 300px;
     background-image:url('default-profile.png');
 }
@@ -58,7 +58,7 @@ div {
     color: white;
 }
 .all  > div {
-    width: 25%;
+    width: 20%;
     display: inline-block;
     vertical-align: top;
 }
