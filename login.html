@@ -14,14 +14,21 @@
         <li><a href="canvas.html">Create new canvas</a></li>
 
      </ul>
-    <form>
-        <label><b>Username</b></label>
-        <input id="username" type="text" placeholder="Enter Username">  
-        <label><b>Password</b></label>
-        <input id="password" type="password" placeholder="Enter Password">
-        <Button type = "button" onclick = "getInfoLog()"> Login </Button>
-    </form>
-    
+	<div>
+		<form>
+			<div class="username">
+				<label><b>Username</b></label>
+				<input id="username" type="text" placeholder="Enter Username"> 
+			</div> 
+			<div class="password">
+		    	<label><b>Password</b></label>
+				<input id="password" type="password" placeholder="Enter Password">
+			</div>
+			<div class="login">
+				<Button type = "button" onclick = "getInfoLog()"> Login </Button>
+			</div>
+		</form>
+    </div>
     
 
     <script src = "js.js"></script>
