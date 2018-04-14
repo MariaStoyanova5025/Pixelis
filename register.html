@@ -13,15 +13,25 @@
         <li><a href="register.html">Register</a></li>
         <li><a href="canvas.html">Create new canvas</a></li>
      </ul>
-    <form>
-        <label><b>Email</b></label>
-        <input id="text" type="text" placeholder="Enter Email"> 
-        <label><b>Username</b></label>
-        <input id="text" type="text" placeholder="Enter Username">  
-        <label><b>Password</b></label>
-        <input id="text" type="password" placeholder="Enter Password">
-        <Button type = "button" onclick = "getInfoReg()"> Register </Button>
-    </form>
+    <div class="all">
+        <form>
+            <div >
+                <label><b>Email</b></label>
+                <input id="text" type="text" placeholder="Enter Email"> 
+            </div>
+            <div>
+                <label><b>Username</b></label>
+                <input id="text" type="text" placeholder="Enter Username">  
+            </div>
+            <div>
+                <label><b>Password</b></label>
+                <input id="text" type="password" placeholder="Enter Password">
+            </div>
+        </form>
+        <div class="register">
+            <Button type = "button" onclick = "getInfoReg()"> Register </Button>
+        </div>
+    </div>
     
 
     <script src = "js.js"></script>
