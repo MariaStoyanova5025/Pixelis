@@ -10,6 +10,10 @@ function getInfoLog()
     li.innerHTML = username
 
     document.getElementsByTagName('ul')[0].appendChild(li)
+    sessionStorage.setItem("username", username)
+    window.location.href = "profile.html"
+    
+   
 }
 
 function getInfoReg()
@@ -27,4 +31,7 @@ function getInfoReg()
     {
         console.log("too little");
     }
+    sessionStorage.setItem("username", username)
+    sessionStorage.setItem("email", email)
+    window.location.href = "profile.html"
 }
