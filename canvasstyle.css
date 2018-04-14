@@ -64,7 +64,6 @@ body {
 .button5 {background-color: green;}
 .button6 {background-color: blue;}
 .button7 {background-color: purple;}
-.button8 {background-color: white;}
 
 
 #container div,
@@ -72,4 +71,7 @@ body {
     display: inline-block;
     vertical-align: top;
     padding: 0 10px 0 10px;
+}
+canvas {
+    display: none;
 }
