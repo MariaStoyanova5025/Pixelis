@@ -67,20 +67,24 @@ function rubber()
     curr_col = "white";
 }
 
-    function triggerDownload (imgURI) {
-        var evt = new MouseEvent('click', {
-          view: window,
-          bubbles: false,
-          cancelable: true
-        });
-      
-        var a = document.createElement('a');
-        a.setAttribute('download', 'MY_COOL_IMAGE.png');
-        a.setAttribute('href', imgURI);
-        a.setAttribute('target', '_blank');
-      
-        a.dispatchEvent(evt);
-      }
+//Stackoverflow.com
+// потребител Ciro Costa на дата Jan 29 '15 at 23:36
+//https://stackoverflow.com/questions/28226677/save-inline-svg-as-jpeg-png-svg
+
+function triggerDownload (imgURI) {
+    var evt = new MouseEvent('click', {
+        view: window,
+        bubbles: false,
+        cancelable: true
+    });
+    
+    var a = document.createElement('a');
+    a.setAttribute('download', 'MY_COOL_IMAGE.png');
+    a.setAttribute('href', imgURI);
+    a.setAttribute('target', '_blank');
+    
+    a.dispatchEvent(evt);
+    }
 
 
 
