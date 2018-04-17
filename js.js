@@ -1,3 +1,12 @@
+const appKey = 'kid_ryt5FBX2f';
+const appSecret = '838945f0470d4d21ae70006bb31094f7'
+const host = 'https://baas.kinvey.com';
+const AppHeaders = {
+    'Authorization' : 'Basic' + btoa(appKey + ":" + appSecret)
+};
+
+
+
 function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
