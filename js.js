@@ -6,57 +6,66 @@ $(()=>{
     const AppHeaders={
         'Authorization' : 'Basic ' + btoa(appKey + ":" + appSecret)
     }; 
-    $('#button').on('click', register);
+    $('#buttonreg').on('click', register);
     function register(event) {
         event.preventDefault();
             $.ajax({
                 method: "POST",
                 url:`${host}/user/${appKey}/`,
                 headers: AppHeaders,
-                data: {
-                    username: "mimo",
-                    password: 'asd',
-                    email: "mimi5025@abv.bg"
-                }
-            }).then((response) => console.log(response))
+                data: getInfoReg()
+            }).then((response) => {
+                console.log(response);
+                sessionStorage.setItem("username", response.username)
+                sessionStorage.setItem("email", response.email)
+                window.location.href = "profile.html"
+            })
+    }
+    $('#buttonlog').on('click', login);
+    function login(event) {
+        event.preventDefault();
+        $.ajax({
+            method:"POST",
+            url:`${host}/user/${appKey}/login`,
+            headers:AppHeaders,
+            data: getInfoLog()
+        }).then((response) => {
+            sessionStorage.setItem("username", response.username)
+            let li = document.createElement('li');
+            li.innerHTML = response.username
+            document.getElementsByTagName('ul')[0].appendChild(li)
+            window.location.href = "profile.html"
+        })
+    }
+
+    function getInfoReg()
+    {
+        var username = document.getElementById("username").value
+        var email = document.getElementById("email").value
+        var password = document.getElementById("password").value
+        if (!validateEmail(email))
+        {
+            var element = document.createElement("h1").innerHTML = "ne staa";
+            
+        }
+        if (password.length < 5)
+        {
+            console.log("too little");
+        }
+        return {username: username,
+                email: email,
+                password: password}
+    }
+    function validateEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+
+    function getInfoLog()
+    {
+        var username = document.getElementById("username").value
+        var password = document.getElementById("password").value
+        return {username: username,
+            password: password}
     }
 })
-
-
-function validateEmail(email) {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}
-function getInfoLog()
-{
-    var username = document.getElementById("username").value
-    var password = document.getElementById("password").value
-    let li = document.createElement('li');
-    li.innerHTML = username
-
-    document.getElementsByTagName('ul')[0].appendChild(li)
-    sessionStorage.setItem("username", username)
-    window.location.href = "profile.html"
-    
-   
-}
-
-function getInfoReg()
-{
-    var username = document.getElementById("username").value
-    var email = document.getElementById("email").value
-    var password = document.getElementById("password").value
-    console.log("-" + username + "-" + password)
-    if (!validateEmail(email))
-    {
-        var element = document.createElement("h1").innerHTML = "ne staa";
-         
-    }
-    if (password.length < 5)
-    {
-        console.log("too little");
-    }
-    sessionStorage.setItem("username", username)
-    sessionStorage.setItem("email", email)
-    window.location.href = "profile.html"
-}
