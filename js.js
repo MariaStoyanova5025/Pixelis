@@ -1,10 +1,21 @@
 const appKey = 'kid_ryt5FBX2f';
 const appSecret = '838945f0470d4d21ae70006bb31094f7'
-const host = 'https://baas.kinvey.com';
+const host = 'https://baas.kinvey.com/';
 const AppHeaders = {
     'Authorization' : 'Basic' + btoa(appKey + ":" + appSecret)
 };
 
+$('#button').on('click', register);
+function register(event) {
+    event.preventDefault();
+    console.log(`${host}user/${appKey}/`);
+        $.ajax({
+            method: "POST",
+            url:`${host}user/${appKey}/`,
+            headers:AppHeaders,
+            data:{"username":"asd", "password":"asd"}
+        }).then((response) => console.log(response + "bla"))
+}
 
 
 function validateEmail(email) {
