@@ -1,0 +1,7 @@
+const express = require('express')
+const app = express()
+app.use(express.static('public'))
+app.get('/register', (req, res) => res.sendfile("register.html"))
+app.get('/profile', (req, res) => res.sendfile("profile.html"))
+app.get('/login', (req, res) => res.sendfile("login.html"))
+app.listen(3000, () => console.log('Example app listening on port 3000!'))
