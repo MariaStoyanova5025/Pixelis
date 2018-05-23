@@ -36,7 +36,7 @@ $(()=>{
             window.location.href = "profile"
         })
     }
-
+    
     function getInfoReg()
     {
         var username = document.getElementById("username").value

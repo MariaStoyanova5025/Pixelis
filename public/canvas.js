@@ -98,6 +98,7 @@ function download()
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
     var data = (new XMLSerializer()).serializeToString(svg);
+    console.log(data);
     var DOMURL = window.URL || window.webkitURL || window;
   
     var img = new Image();
