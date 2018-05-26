@@ -1,27 +1,83 @@
+$(()=>{
+
+    const appKey = 'kid_ryt5FBX2f';
+    const host = 'https://baas.kinvey.com'; 
+    function userHeaders() {
+        return {
+            'Authorization': 'Kinvey ' + sessionStorage.getItem('authToken')
+        }
+    }
+    $('#upload').on('click', upload);
+    function upload(event) {
+        event.preventDefault();
+        var s = new XMLSerializer().serializeToString(document.getElementById("svg"))
+        var data = 'data:image/svg+xml;base64,' + window.btoa(s);
+            $.ajax({
+                method: "POST",
+                url:`${host}/appdata/${appKey}/images`,
+                headers: userHeaders(),
+                data:{
+                    content: data
+                 }
+            }).then((response) => {
+                console.log(response);
+                var img = document.createElement('img');
+                img.src = response.content
+                document.getElementsByTagName('body')[0].appendChild(img)
+            })
+    }
+
+})
+
+var coll = document.getElementsByClassName("button button1");
+coll[0].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    console.log(content)
+    if (content.style.display === "block") {
+        content.style.display = "none";
+    } else {
+        content.style.display = "block";
+    }
+});
+
 var curr_col;
-function createCanvas() {
+function createCanvas(n) {
     let oldsvg = document.getElementsByTagName("svg")[0];
     if(oldsvg){
         oldsvg.innerHTML = '';
+        console.log("eho, vladi")
     }
     var svg = document.getElementsByTagName("svg")[0];
     x = 0;
     y = 0;
-    for(let i = 0; i < 10; i++) {
-        for(let k = 0; k < 10; k++){
-            svg.innerHTML += `<rect x = ${x} y = ${y} width="50" height="50" style="fill:rgb(255,255,255);stroke-width:3;stroke:rgb(0,0,0)"/>`;
-            x += 50; 
+    s = 0;
+    switch(n)
+    {
+        case 16: s = 40;
+        break;
+        case 32: s = 20;
+        break;
+        case 64: s = 10;
+        break;
+        case 128: s = 5;
+        break;
+    }
+    for(let i = 0; i < n; i++) {
+        for(let k = 0; k < n; k++){
+            svg.innerHTML += `<rect x = ${x} y = ${y} width= "${s}" height="${s}" style="fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)"/>`;
+            x += s; 
         }
         x = 0;
-        y+= 50;
+        y+= s;
     }
-    addlis();
+    addlis(n);
 }
-function addlis()
+function addlis(n)
 {
     var svg = document.getElementsByTagName("svg")[0];
     var rect = svg.children;
-    for(let i = 0; i < 100; i++)
+    for(let i = 0; i < n*n; i++)
     {
         rect[i].addEventListener("click", color);
     }
@@ -29,7 +85,7 @@ function addlis()
 
 function color()
 {
-    this.style = `fill:${curr_col};stroke-width:3;stroke:rgb(0,0,0)`;
+    this.style = `fill:${curr_col};stroke-width:1;stroke:rgb(0,0,0)`;
 }
 
 function red()
@@ -90,10 +146,10 @@ function triggerDownload (imgURI) {
 
 function download()
 {    
-
-  var svg = document.getElementById('svg');  
+    console.log('asd')
+    var svg = document.getElementById('svg');  
   
-  
+   
 
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
@@ -106,7 +162,6 @@ function download()
     var url = DOMURL.createObjectURL(svgBlob);
   
     img.onload = function () {
-        console.log("izvinete????");
       ctx.drawImage(img, 0, 0);
       DOMURL.revokeObjectURL(url);
   

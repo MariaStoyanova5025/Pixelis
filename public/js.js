@@ -32,6 +32,7 @@ $(()=>{
             data: getInfoLog()
         }).then((response) => {
             console.log(response);
+            sessionStorage.setItem('authToken', response._kmd.authtoken);
             sessionStorage.setItem("username", response.username)
             window.location.href = "profile"
         })

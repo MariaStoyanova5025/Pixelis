@@ -66,7 +66,7 @@ body {
 .button7 {background-color: purple;}
 
 
-#container div,
+#container > div,
 #container svg {
     display: inline-block;
     vertical-align: top;
@@ -74,4 +74,9 @@ body {
 }
 canvas {
     display: none; 
+}
+
+.size {
+    background-color: black;
+    display: none;
 }

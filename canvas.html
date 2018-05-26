@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pixelis</title>
+    <script src = "jquery.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="canvasstyle.css">
 </head>
@@ -19,13 +21,19 @@
 		  <button><i class="fa fa-eyedropper" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button>
 		  <button><i class="fa fa-eraser" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;" onclick = "rubber()"></i></button> 
 		  <button><i class="fa fa-image" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button>
-		  <button><i class="fa fa-edit" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button>
+		  <button id="upload"><i class="fa fa-edit" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button>
 		  <button id = "link"><i class="fa fa-download" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;" onclick = "download()"></i></button>
 		  <button><i class="fa fa-trash" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button> 
         </div>
         		
         <div class="color-bar">
-            <Button class="button button1" type = "button" onclick = "createCanvas()"> new </Button>
+            <Button class="button button1" type = "button"> New </Button>
+                <div class="size">
+                    <Button type = "button" onclick = "createCanvas(16)"> 16x16 </Button>
+                    <Button type = "button" onclick = "createCanvas(32)"> 32x32 </Button>
+                    <Button type = "button" onclick = "createCanvas(64)"> 64x64 </Button>
+                    <Button type = "button" onclick = "createCanvas(128)"> 128x128 </Button>
+                </div>
             <Button class="button button2" type = "button" onclick = "red()"> </Button>
             <Button class="button button3" type = "button" onclick = "orange()"> </Button>
             <Button class="button button4" type = "button" onclick = "yellow()"> </Button>
@@ -33,8 +41,8 @@
             <Button class="button button6" type = "button" onclick = "blue()"> </Button>
             <Button class="button button7" type = "button" onclick = "purple()"> </Button>
             </div>
-    <svg id="svg" width="500" height="500"></svg>
-    <canvas id="canvas" width="500" height="500"> </canvas> 
+    <svg id="svg" width="800" height="800"></svg>
+    <canvas id="canvas" width="800" height="800"> </canvas> 
 
     </div>
     <script src = "canvas.js"></script>
