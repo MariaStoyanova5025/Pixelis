@@ -74,6 +74,7 @@ body {
 }
 canvas {
     display: none; 
+    cursor: url(pencil(2).png), auto;
 }
 
 .size {
