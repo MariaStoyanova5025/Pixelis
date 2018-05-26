@@ -17,7 +17,11 @@
     </ul>
     <div id="container">
 		<div class="button-group">
-		  <button><i class="fa fa-paint-brush" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button>
+            <Button class="new" type = "button"> New </Button>
+            <div class="size">
+                <Button type = "button" onclick = "createCanvas(16)"> 16x16 </Button>
+                <Button type = "button" onclick = "createCanvas(32)"> 32x32 </Button>
+            </div>
 		  <button><i class="fa fa-eyedropper" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button>
 		  <button><i class="fa fa-eraser" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;" onclick = "rubber()"></i></button> 
 		  <button><i class="fa fa-image" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button>
@@ -26,24 +30,61 @@
 		  <button><i class="fa fa-trash" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button> 
         </div>
         		
-        <div class="color-bar">
-            <Button class="button button1" type = "button"> New </Button>
-                <div class="size">
-                    <Button type = "button" onclick = "createCanvas(16)"> 16x16 </Button>
-                    <Button type = "button" onclick = "createCanvas(32)"> 32x32 </Button>
-                    <Button type = "button" onclick = "createCanvas(64)"> 64x64 </Button>
-                    <Button type = "button" onclick = "createCanvas(128)"> 128x128 </Button>
-                </div>
-            <Button class="button button2" type = "button" onclick = "red()"> </Button>
-            <Button class="button button3" type = "button" onclick = "orange()"> </Button>
-            <Button class="button button4" type = "button" onclick = "yellow()"> </Button>
-            <Button class="button button5" type = "button" onclick = "green()"> </Button>
-            <Button class="button button6" type = "button" onclick = "blue()"> </Button>
-            <Button class="button button7" type = "button" onclick = "purple()"> </Button>
-            </div>
-    <svg id="svg" width="800" height="800"></svg>
+    <svg id="svg" width="640" height="640"></svg>
     <canvas id="canvas" width="800" height="800"> </canvas> 
-
+    <div class="color-bar">
+        <div class="color">
+                <Button class="shades" type = "button" onclick = "change('red')" style="background-color:red"></Button>
+                <Button class="shades" type = "button" onclick = "change('Crimson')" style="background-color:crimson"></Button>
+                <Button class="shades" type = "button" onclick = "change('DarkRed')" style="background-color:DarkRed"></Button>
+                <Button class="shades" type = "button" onclick = "change('Salmon')" style="background-color:Salmon"></Button>
+                <Button class="shades" type = "button" onclick = "change('LightCoral')" style="background-color:LightCoral"></Button>
+        </div>
+        <div class="color">
+                <Button class="shades" type = "button" onclick = "change('orange')" style="background-color:orange"></Button>
+                <Button class="shades" type = "button" onclick = "change('DarkOrange')" style="background-color:DarkOrange"></Button>
+                <Button class="shades" type = "button" onclick = "change('Coral')" style="background-color:Coral"></Button>
+                <Button class="shades" type = "button" onclick = "change('OrangeRed')" style="background-color:OrangeRed"></Button>
+                <Button class="shades" type = "button" onclick = "change('Tomato')" style="background-color:Tomato"></Button>
+        </div>
+        <div class="color">
+                <Button class="shades" type = "button" onclick = "change('Gold')" style="background-color:Gold"></Button>
+                <Button class="shades" type = "button" onclick = "change('DarkGoldenRod')" style="background-color:DarkGoldenRod"></Button>
+                <Button class="shades" type = "button" onclick = "change('Khaki')" style="background-color:Khaki"></Button>
+                <Button class="shades" type = "button" onclick = "change('yellow')" style="background-color:yellow"></Button>
+                <Button class="shades" type = "button" onclick = "change('DarkKhaki')" style="background-color:DarkKhaki"></Button>
+        </div>
+        <div class="color">
+                <Button class="shades" type = "button" onclick = "change('Chartreuse')" style="background-color:Chartreuse"></Button>
+                <Button class="shades" type = "button" onclick = "change('LimeGreen')" style="background-color:LimeGreen"></Button>
+                <Button class="shades" type = "button" onclick = "change('DarkGreen')" style="background-color:DarkGreen"></Button>
+                <Button class="shades" type = "button" onclick = "change('green')" style="background-color:green"></Button>
+                <Button class="shades" type = "button" onclick = "change('GreenYellow')" style="background-color:GreenYellow"></Button>
+        </div>
+        <div class="color">
+                <Button class="shades" type = "button" onclick = "change('DeepSkyBlue')" style="background-color:DeepSkyBlue"></Button>
+                <Button class="shades" type = "button" onclick = "change('RoyalBlue')" style="background-color:RoyalBlue"></Button>
+                <Button class="shades" type = "button" onclick = "change('LightSkyBlue')" style="background-color:LightSkyBlue"></Button>
+                <Button class="shades" type = "button" onclick = "change('MidnightBlue')" style="background-color:MidnightBlue"></Button>
+                <Button class="shades" type = "button" onclick = "change('blue')" style="background-color:blue"></Button>
+        </div>
+        <div class="color">
+                <Button class="shades" type = "button" onclick = "change('Magentared')" style="background-color:Magenta"></Button>
+                <Button class="shades" type = "button" onclick = "change('Orchid')" style="background-color:Orchid"></Button>
+                <Button class="shades" type = "button" onclick = "change('DarkViolet')" style="background-color:DarkViolet"></Button>
+                <Button class="shades" type = "button" onclick = "change('RebeccaPurple')" style="background-color:RebeccaPurple"></Button>
+                <Button class="shades" type = "button" onclick = "change('purple')" style="background-color:purple"></Button>
+        </div>
+        <div class="color">
+                <Button class="shades" type = "button" onclick = "change('DimGray')" style="background-color:DimGray"></Button>
+                <Button class="shades" type = "button" onclick = "change('Gray')" style="background-color:Gray"></Button>
+                <Button class="shades" type = "button" onclick = "change('DarkGray')" style="background-color:DarkGray"></Button>
+                <Button class="shades" type = "button" onclick = "change('Silver')" style="background-color:Silver"></Button>
+                <Button class="shades" type = "button" onclick = "change('black')" style="background-color:black"></Button>
+        </div>
+        
+            
+    </div>
     </div>
     <script src = "canvas.js"></script>
 	<!--<script src="jscolor.js"></script>

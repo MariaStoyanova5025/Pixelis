@@ -29,8 +29,9 @@ $(()=>{
 
 })
 
-var coll = document.getElementsByClassName("button button1");
-coll[0].addEventListener("click", function() {
+var new_ = document.getElementsByClassName("new");
+for (i = 0; i < new_.length; i++) {
+new_[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
     console.log(content)
@@ -40,6 +41,7 @@ coll[0].addEventListener("click", function() {
         content.style.display = "block";
     }
 });
+}
 
 var curr_col;
 function createCanvas(n) {
@@ -57,10 +59,6 @@ function createCanvas(n) {
         case 16: s = 40;
         break;
         case 32: s = 20;
-        break;
-        case 64: s = 10;
-        break;
-        case 128: s = 5;
         break;
     }
     for(let i = 0; i < n; i++) {
@@ -88,34 +86,10 @@ function color()
     this.style = `fill:${curr_col};stroke-width:1;stroke:rgb(0,0,0)`;
 }
 
-function red()
+function change(color)
 {
-    curr_col = "red";
-}
-
-function orange()
-{
-    curr_col = "orange";
-}
-
-function yellow()
-{
-    curr_col = "yellow";
-}
-
-function green()
-{
-    curr_col = "green";
-}
-
-function blue()
-{
-    curr_col = "blue";
-}
-
-function purple()
-{
-    curr_col = "purple";
+    curr_col = color;
+    
 }
 
 function rubber()

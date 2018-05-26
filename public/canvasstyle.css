@@ -57,14 +57,21 @@ body {
     width: 90px;
     height: 90px;
 }
-.button1 {background-color: black;}
-.button2 {background-color: red;}
-.button3 {background-color: orange;}
-.button4 {background-color: yellow;}
-.button5 {background-color: green;}
-.button6 {background-color: blue;}
-.button7 {background-color: purple;}
 
+.color-bar > div{
+    display: block;
+}
+
+.color{
+    display: inline;
+    margin: 3px;
+}
+.shades{
+    overflow: auto;
+    border-radius: 2px;
+    border: black;
+    padding: 20px;
+}
 
 #container > div,
 #container svg {
@@ -74,10 +81,13 @@ body {
 }
 canvas {
     display: none; 
-    cursor: url(pencil(2).png), auto;
+    
+}
+
+svg{
+    cursor: url(pencil.png), auto;
 }
 
 .size {
-    background-color: black;
     display: none;
 }
