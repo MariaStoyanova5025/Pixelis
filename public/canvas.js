@@ -71,6 +71,11 @@ function createCanvas(n) {
     }
     addlis(n);
 }
+var check = false;
+function color_pick()
+{
+    check = true;
+}
 function addlis(n)
 {
     var svg = document.getElementsByTagName("svg")[0];
@@ -83,6 +88,12 @@ function addlis(n)
 
 function color()
 {
+    if(check == true)
+        {
+            check = false;
+            curr_col = this.style.getPropertyValue('fill');
+        }
+    
     this.style = `fill:${curr_col};stroke-width:1;stroke:rgb(0,0,0)`;
 }
 
