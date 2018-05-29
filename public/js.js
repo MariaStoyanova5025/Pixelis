@@ -16,6 +16,7 @@ $(()=>{
                 data: getInfoReg()
             }).then((response) => {
                 console.log(response);
+                sessionStorage.setItem('authToken', response._kmd.authtoken);
                 sessionStorage.setItem("username", response.username)
                 sessionStorage.setItem("email", response.email)
                 window.location.href = "profile"
@@ -34,6 +35,7 @@ $(()=>{
             console.log(response);
             sessionStorage.setItem('authToken', response._kmd.authtoken);
             sessionStorage.setItem("username", response.username)
+            sessionStorage.setItem("email", response.email)
             window.location.href = "profile"
         })
     }

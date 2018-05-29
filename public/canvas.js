@@ -17,13 +17,11 @@ $(()=>{
                 url:`${host}/appdata/${appKey}/images`,
                 headers: userHeaders(),
                 data:{
+                    author: sessionStorage.getItem('username'),
                     content: data
                  }
             }).then((response) => {
-                console.log(response);
-                var img = document.createElement('img');
-                img.src = response.content
-                document.getElementsByTagName('body')[0].appendChild(img)
+                
             })
     }
 
@@ -34,8 +32,7 @@ for (i = 0; i < new_.length; i++) {
 new_[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
-    console.log(content)
-    if (content.style.display === "block") {
+    if (content.style.display == "block") {
         content.style.display = "none";
     } else {
         content.style.display = "block";
@@ -45,6 +42,7 @@ new_[i].addEventListener("click", function() {
 
 var curr_col;
 function createCanvas(n) {
+    document.getElementsByClassName("size")[0].style.display = "none"
     let oldsvg = document.getElementsByTagName("svg")[0];
     if(oldsvg){
         oldsvg.innerHTML = '';
@@ -83,6 +81,16 @@ function addlis(n)
     for(let i = 0; i < n*n; i++)
     {
         rect[i].addEventListener("click", color);
+    }
+}
+
+function trash()
+{
+    var svg = document.getElementsByTagName("svg")[0];
+    var rect = svg.children;
+    for(let i = 0; i < rect.length; i++)
+    {
+        rect[i].style = `fill:white;stroke-width:1;stroke:rgb(0,0,0)`;
     }
 }
 

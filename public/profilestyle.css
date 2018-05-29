@@ -49,7 +49,16 @@ div {
     background-image:url('default-profile.png');
 }
 .all {
+    display: inline-block;
     text-align: left;
+    width: 75%;
+}
+
+#adds 
+{
+    float: right;
+    border: 0;
+    height: 300px;
 }
 .info {
     width: 50%;

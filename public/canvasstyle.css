@@ -77,7 +77,7 @@ body {
 #container svg {
     display: inline-block;
     vertical-align: top;
-    padding: 0 10px 0 10px;
+    padding: 10px 0 0 10px;
 }
 canvas {
     display: none; 
@@ -86,8 +86,19 @@ canvas {
 
 svg{
     cursor: url(pencil.png), auto;
+   
 }
 
 .size {
     display: none;
 }
+
+#galery,
+#profile {
+    float:right;
+}
+
+#adds{
+    display: block;
+}
+

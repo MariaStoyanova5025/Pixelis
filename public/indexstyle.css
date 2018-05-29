@@ -1,7 +1,7 @@
 h1 {
     font-size:50px;
     font-family: "Arial Black", Gadget, sans-serif;
-    margin-top: 200px;
+    margin-top: 100px;
 }
 
 ul {
@@ -36,11 +36,12 @@ body {
 }
 
 div {
-	display: block;
+    display: block;
     margin-left: auto;
     margin-right: auto;
     
 }
+
 
 input[type=submit]{
     font-size:18px;
@@ -48,8 +49,14 @@ input[type=submit]{
     color: white;
     border: none;
     padding: 12px 20px;
+    margin-bottom: 30px;
 }
+
 
 input[type=submit]:hover {
     background-color: #111;
+}
+#galery,
+#profile {
+    float:right;
 }

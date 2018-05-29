@@ -2,23 +2,31 @@
 <html>
 <head>
     <title>Pixelis</title>
-
+	<script src = "hidden.js"></script>
     <link rel="stylesheet" type="text/css" href="indexstyle.css">
 </head>
 
-<body>
+<body onload="check()">
 	<ul>
 	        <li><a href="/">Home</a></li>
-	        <li><a href="/login">Login</a></li>
-	        <li><a href="/register">Register</a></li>
-	        <li><a href="/canvas">Create new canvas</a></li>
+	        <li><a id="login" href="/login">Login</a></li>
+	        <li><a id="register" href="/register">Register</a></li>
+			<li><a href="/canvas">Create new canvas</a></li>
+			<li id="profile"><a href="/profile">Profile</a></li>
+        	<li id="galery"><a href="/gallery">Gralery</a></li>
 	</ul>
 	
-	<div>
+	<div id="info">
 		<h1>Welcome to Pixelis!</h1>
 		<form action="/canvas">
 		    <input type="submit" value="Create new pixel!" /> 
 		</form>
+	</div>
+
+	<div style="margin-top:50px;">
+		<a href="https://wearecodenation.com/">
+			<img src="https://blog.bufferapp.com/wp-content/uploads/2015/08/Businessweek-code_gif.gif" width="400" height="276" border="0">
+		</a>
 	</div>
 </body>
 

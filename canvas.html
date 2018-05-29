@@ -3,17 +3,21 @@
 <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pixelis</title>
+    
     <script src = "jquery.js"></script>
+    
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="canvasstyle.css">
 </head>
 
-<body>
+<body onload="check()">
     <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/register">Register</a></li>
-        <li><a href="/canvas">Create new canvas</a></li>   
+        <li><a id="login" href="/login">Login</a></li>
+        <li><a id="register" href="/register">Register</a></li>
+        <li><a href="/canvas">Create new canvas</a></li> 
+        <li id="profile"><a href="/profile">Profile</a></li>
+        <li id="galery"><a href="/gallery">Gralery</a></li>  
     </ul>
     <div id="container">
 		<div class="button-group">
@@ -22,12 +26,11 @@
                 <Button type = "button" onclick = "createCanvas(16)"> 16x16 </Button>
                 <Button type = "button" onclick = "createCanvas(32)"> 32x32 </Button>
             </div>
-		  <button title="color picker"><i class="fa fa-eyedropper" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;" onclick="color_pick()"></i></button>
-		  <button><i class="fa fa-eraser" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;" onclick = "rubber()"></i></button> 
-		  <button><i class="fa fa-image" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button>
-		  <button id="upload"><i class="fa fa-edit" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button>
-		  <button id = "link"><i class="fa fa-download" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;" onclick = "download()"></i></button>
-		  <button><i class="fa fa-trash" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button> 
+		  <button title="Color picker"><i class="fa fa-eyedropper" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;" onclick="color_pick()"></i></button>
+		  <button title="Eraser"><i class="fa fa-eraser" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;" onclick = "rubber()"></i></button> 
+		  <button title="Save to galery" id="upload"><i class="fa fa-image" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;"></i></button>
+		  <button title="Download" id = "link"><i class="fa fa-download" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;" onclick = "download()"></i></button>
+		  <button title="Restart"><i class="fa fa-trash" style="font-size:50px;color:white;text-shadow:2px 2px 4px #000000;" onclick="trash()"></i></button> 
         </div>
         		
     <svg id="svg" width="640" height="640"></svg>
@@ -82,14 +85,22 @@
                 <Button class="shades" type = "button" onclick = "change('Silver')" style="background-color:Silver"></Button>
                 <Button class="shades" type = "button" onclick = "change('black')" style="background-color:black"></Button>
         </div>
-        <div class="color">
-                <Button class="shades" type = "button" onclick = "change('DimGray')" style="background-color:black"></Button>
-        </div>
         
             
-    </div>
+        </div>
+        <div id="adds" style="float:right; ">
+                <a href="https://www.groupon.com/" style="margin-bottom: 15px">
+                    <img src="http://img.grouponcdn.com/gpn/bwsik9CKUoGXAtAtKGiJ/14-300x250" width= "300">
+                </a>
+                <br>
+                <a href="https://www.ryanevansdesigns.com/key-seeker/" style="padding-top: 40px">
+                        <img src=" https://thumbs.gfycat.com/ChillyPoshArmyant-max-1mb.gif" width= "300">
+                    </a>
+               
+        </div>
     </div>
     <script src = "canvas.js"></script>
+    <script src = "hidden.js"></script>
 	<!--<script src="jscolor.js"></script>
 	Color: <input class="jscolor" value="ab2567">-->
 </body>
