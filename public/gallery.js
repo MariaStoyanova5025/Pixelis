@@ -6,18 +6,27 @@ $(()=>{
             'Authorization': 'Kinvey ' + sessionStorage.getItem('authToken')
         }
     }
-    console.log(sessionStorage.getItem('authToken'));
     $.ajax({
         method: "GET",
         url:`${host}/appdata/${appKey}/images?query={"author":"${sessionStorage.getItem('username')}"}`,
         headers: userHeaders()
     }).then((response) => {
-        console.log(response)
         let i = 1
         response.forEach(function(img) {
-            $('.all').append($('<div></div>').addClass('part').append($('<div></div>').attr('id', 'name').append($('<p></p>').text('Pixel ' + i))).append($('<img>').attr('src', img.content)))
+            $('.all').append($('<div></div>').attr('id', img._id).addClass('part').append($('<div></div>').append($('<p></p>').attr('id', 'name').text('Pixel ' + i))).append($('<img>').attr('src', img.content)).append($('<button>').html('Delete').on('click', delete_image)))
             i++
         });
     })
+    function delete_image(){
+        
+        $.ajax({
+            method:"DELETE",
+            url:`${host}/appdata/${appKey}/images/${$(this).parent().attr('id')}`,
+            headers: userHeaders(),
+            success: ()=>{
+                $(this).parent().remove();
+            }
+        })
+    }
 })
 
