@@ -26,7 +26,8 @@ li a:hover {
 }
 .all{
     display: flex;
-    width: 100%;
+    position: fixed;
+    margin-left: 40%;
     height: 95%;
     justify-content: center;
 }

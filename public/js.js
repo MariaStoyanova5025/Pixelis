@@ -13,7 +13,10 @@ $(()=>{
                 method: "POST",
                 url:`${host}/user/${appKey}/`,
                 headers: AppHeaders,
-                data: getInfoReg()
+                data: getInfoReg(),
+                error: function(anotherError) {
+                    alert('Something went wrong');
+                }
             }).then((response) => {
                 console.log(response);
                 sessionStorage.setItem('authToken', response._kmd.authtoken);
@@ -30,7 +33,10 @@ $(()=>{
             method:"POST",
             url:`${host}/user/${appKey}/login`,
             headers:AppHeaders,
-            data: getInfoLog()
+            data: getInfoLog(),
+            error: function(anotherError) {
+                alert('Something went wrong');
+            }
         }).then((response) => {
             console.log(response);
             sessionStorage.setItem('authToken', response._kmd.authtoken);
@@ -47,7 +53,7 @@ $(()=>{
         var password = document.getElementById("password").value
         if (!validateEmail(email))
         {
-            var element = document.createElement("h1").innerHTML = "ne staa";
+            alert_fun();
             
         }
         if (password.length < 5)
@@ -69,5 +75,9 @@ $(()=>{
         var password = document.getElementById("password").value
         return {username: username,
             password: password}
+    }
+    function alert_fun()
+    {
+        alert('Invalid Email');
     }
 })

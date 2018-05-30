@@ -1,7 +1,11 @@
-
+html, body {
+    height: 100%;
+    margin: 0;
+}
 ul {
     list-style-type: none;
-    margin: 0;
+    margin: 5px;
+    margin-bottom: 0.5px;
     padding: 0;
     overflow: hidden;
     background-color: #333;
@@ -94,7 +98,8 @@ svg{
 }
 
 #galery,
-#profile {
+#profile,
+#logout {
     float:right;
 }
 

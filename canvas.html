@@ -15,9 +15,11 @@
         <li><a href="/">Home</a></li>
         <li><a id="login" href="/login">Login</a></li>
         <li><a id="register" href="/register">Register</a></li>
-        <li><a href="/canvas">Create new canvas</a></li> 
+        <li><a href="/canvas" target="_blank">Create new canvas</a></li> 
+        <li id="logout"><a href="/login" onclick="logout()">Log out</a></li>
         <li id="profile"><a href="/profile">Profile</a></li>
         <li id="galery"><a href="/gallery">Gallery</a></li>  
+        
     </ul>
     <div id="container">
 		<div class="button-group">
@@ -35,7 +37,7 @@
         		
     <svg id="svg" width="640" height="640"></svg>
     <canvas id="canvas" width="800" height="800"> </canvas> 
-    <div class="color-bar">
+    <div class="color-bar" style="background-color:#333; padding:3px; border-radius: 5px; margin: 5px;">
         <div class="color">
                 <Button class="shades" type = "button" onclick = "change('red')" style="background-color:red"></Button>
                 <Button class="shades" type = "button" onclick = "change('Crimson')" style="background-color:crimson"></Button>

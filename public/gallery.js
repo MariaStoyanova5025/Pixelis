@@ -5,18 +5,27 @@ $(()=>{
         return {
             'Authorization': 'Kinvey ' + sessionStorage.getItem('authToken')
         }
+    } 
+    console.log(sessionStorage)
+    if (sessionStorage.getItem("username") === null)
+    {
+        
+        alert("Log in to save your pixel to the galery!");
+    } else {
+        
+        $.ajax({
+            method: "GET",
+            url:`${host}/appdata/${appKey}/images?query={"author":"${sessionStorage.getItem('username')}"}`,
+            headers: userHeaders()
+        }).then((response) => {
+            let i = 1
+            response.forEach(function(img) {
+                $('.all').append($('<div></div>').attr('id', img._id).addClass('part').append($('<div></div>').append($('<p></p>').attr('id', 'name').text('Pixel ' + i))).append($('<img>').attr('src', img.content)).append($('<button>').html('Delete').on('click', delete_image)))
+                i++
+            });
+        })
     }
-    $.ajax({
-        method: "GET",
-        url:`${host}/appdata/${appKey}/images?query={"author":"${sessionStorage.getItem('username')}"}`,
-        headers: userHeaders()
-    }).then((response) => {
-        let i = 1
-        response.forEach(function(img) {
-            $('.all').append($('<div></div>').attr('id', img._id).addClass('part').append($('<div></div>').append($('<p></p>').attr('id', 'name').text('Pixel ' + i))).append($('<img>').attr('src', img.content)).append($('<button>').html('Delete').on('click', delete_image)))
-            i++
-        });
-    })
+    
     function delete_image(){
         
         $.ajax({
