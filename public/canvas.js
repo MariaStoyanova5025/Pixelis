@@ -16,6 +16,9 @@ $(()=>{
                 method: "POST",
                 url:`${host}/appdata/${appKey}/images`,
                 headers: userHeaders(),
+                error:  function(anotherError) {
+                    alert('You shoud be logged');
+                },
                 data:{
                     author: sessionStorage.getItem('username'),
                     content: data
