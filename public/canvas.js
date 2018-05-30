@@ -16,6 +16,9 @@ $(()=>{
                 method: "POST",
                 url:`${host}/appdata/${appKey}/images`,
                 headers: userHeaders(),
+                success:  function(anotherError) {
+                    alert('Successfuly saved');
+                },
                 error:  function(anotherError) {
                     alert('You shoud be logged');
                 },
